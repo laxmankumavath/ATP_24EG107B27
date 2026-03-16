@@ -1,0 +1,98 @@
+### read all users(req to protected route
+GET http://localhost:4000/user-api/user
+Cookie:token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNyZWVuaWxheXJlZGR5QGdtYWlsLmNvbSIsImlhdCI6MTc3MzI4OTAyMSwiZXhwIjoxNzczMjkyNjIxfQ.k6IQYgA47CHty1jbUiZMBiWs_oyUP1T0UnwYQaCTiIs; Path=/; HttpOnly; SameSite=Lax
+
+
+
+### read specific user , only user can read there details
+GET http://localhost:4000/user-api/users/
+Cookie:token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNyZWVuaWxheXJlZGR5QGdtYWlsLmNvbSIsImlhdCI6MTc3Mjg3NTQ0OSwiZXhwIjoxNzcyODc5MDQ5fQ.PZJih43HaO8nVD4jvVoQfX9CFh0ZB7cj09BZf81maa4; Path=/; HttpOnly; SameSite=Lax
+
+###create new user,after post ,there should be no space between post and content-type
+POST http://localhost:4000/user-api/user
+Content-Type: application/json 
+Cookie:token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNyZWVuaWxheXJlZGR5QGdtYWlsLmNvbSIsImlhdCI6MTc3Mjg3NTQ0OSwiZXhwIjoxNzcyODc5MDQ5fQ.PZJih43HaO8nVD4jvVoQfX9CFh0ZB7cj09BZf81maa4; Path=/; HttpOnly; SameSite=Lax
+
+{
+    "username":"mikeeee",
+    "password":"hansssshh",
+    "email":"sreenilayyreddy@gmail.com",
+    "age":19
+}
+
+
+
+###user login
+post  http://localhost:4000/user-api/auth
+Content-Type: application/json 
+
+{
+   "email":"sreenilayreddy@gmail.com" ,
+   "password":"hanssssh"
+}
+### same as user give for pdt
+###update a user
+
+PUT http://localhost:4000/user-api/user/69abbe19bf70967a0aa02a71
+Content-Type: application/json
+Cookie:token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNyZWVuaWxheXJlZGR5QGdtYWlsLmNvbSIsImlhdCI6MTc3Mjg3NTQ0OSwiZXhwIjoxNzcyODc5MDQ5fQ.PZJih43HaO8nVD4jvVoQfX9CFh0ZB7cj09BZf81maa4; Path=/; HttpOnly; SameSite=Lax
+
+{
+    "username":"sreenili",
+    "password":"sree",
+    "email":"sreenilayreddy@gmail.com",
+    "age":19
+}
+
+
+### delete a user
+DELETE http://localhost:4000/user-api/user/69aa9c9191e4c6d09badbde1
+Cookie:token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNyZWVuaWxheXJlZGR5QGdtYWlsLmNvbSIsImlhdCI6MTc3Mjg3NTQ0OSwiZXhwIjoxNzcyODc5MDQ5fQ.PZJih43HaO8nVD4jvVoQfX9CFh0ZB7cj09BZf81maa4; Path=/; HttpOnly; SameSite=Lax
+
+
+### get and post shouldd send body to the backend , geut and delete doen't support body of req object , so that the two req can send data through end point  -->
+
+
+
+
+###get all pdt
+
+GET http://localhost:4000/pdt-api/product
+
+###get one specific
+GET http://localhost:4000/pdt-api/product/b36
+
+
+### brand name
+GET http://localhost:4000/pdt-api/product/vivo
+
+
+### post
+POST http://localhost:4000/pdt-api/product
+Content-Type: application/json 
+
+{
+    "productid":"b36",
+    "productname":"smartphone",
+    "price":25000,
+    "brand":"redmi"
+}
+
+
+
+###put 
+put http://localhost:4000/pdt-api/product/b36
+Content-Type: application/json 
+
+{
+    "productid":"b36",
+    "productname":"smartphone",
+    "price":25000,
+    "brand":"vivo"
+}
+
+###delete
+delete http://localhost:4000/pdt-api/product/b36
+
+
+
