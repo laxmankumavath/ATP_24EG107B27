@@ -1,0 +1,28 @@
+*{
+    margin:0;
+    
+    padding:0;
+
+    box-sizing:border-box;
+
+
+
+
+}
+H1{
+
+    border:5px solid red;
+
+    text-align: center;
+
+    padding:100px;
+
+    width:500px;
+
+    
+
+
+   
+
+
+}
