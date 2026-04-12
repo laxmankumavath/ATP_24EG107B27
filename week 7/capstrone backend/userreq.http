@@ -1,0 +1,22 @@
+POST http://localhost:2907/common-api/user
+Content-Type: application/json
+
+{
+    "firstname":"minumula",
+    "lastname":"sreenilay reddy",
+    "email":"sreenilayredy@gmail.com",
+    "password":"mikeeee",
+    "role":"user"
+}
+
+###login 
+post  http://localhost:2907/common-api/auth
+Content-Type: application/json 
+
+{
+   "email":"sreenilayredy@gmail.com" ,
+   "password":"mikeeee"
+}
+
+###logout
+GET  http://localhost:2907/common-api/logout
